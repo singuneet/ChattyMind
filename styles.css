@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    position: relative; /* Ensure positioning relative to the body */
+    min-height: 100vh; /* Set minimum height to fill the viewport */
+}
+
+h1 {
+    text-align: center;
+}
+
+.chat-container {
+    width: 90%; /* Full width */
+    height: 400px; /* Set the height to your desired value */
+    border: 1px solid #ccc;
+    overflow-y: scroll;
+    padding: 20px; /* Increased padding for better readability */
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center; /* Center the input and button horizontally */
+    align-items: center; /* Align input and button vertically */
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 8px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #ccc;
+}
+
+.credits {
+    font-size: 12px;
+    line-height: 1.5;
+}

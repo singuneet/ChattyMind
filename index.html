@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChattyMind - Your Virtual Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>ChattyMind - Your Virtual Assistant</h1>
+
+    <div class="chat-container" id="chat-container"></div>
+    <div class="input-container">
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <footer>
+        <p class="credits">
+            <span>SRISHTI SINGH (RA2111003011269)</span><br>
+            <span>RISHITA SEETHA (RA2111003011279)</span><br>
+            <span>GUNEET S BAGGA (RA2111003011315)</span>
+        </p>
+    </footer>
+
+    <script>
+        function sendMessage() {
+            var userInput = document.getElementById("user-input").value;
+            appendMessage("You: " + userInput);
+
+            // Example: Replace this fetch request with your actual chatbot interaction logic
+            // Make a POST request to your Flask backend
+            fetch("/chat", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ message: userInput })
+            })
+            .then(response => response.json())
+            .then(data => {
+                appendMessage("ChattyMind: " + data.message);
+            });
+
+            document.getElementById("user-input").value = "";
+        }
+
+        function appendMessage(message) {
+            var chatContainer = document.getElementById("chat-container");
+            var messageElement = document.createElement("div");
+            messageElement.textContent = message;
+            chatContainer.appendChild(messageElement);
+
+            // Scroll to bottom of chat container
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+    </script>
+</body>
+</html>
