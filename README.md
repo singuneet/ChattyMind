@@ -24,7 +24,7 @@ Follow these steps to set up and run the project locally using a virtual environ
 Extract the `ChattyMind-main.zip` file or clone if using git:
 
 ```bash
-git clone <repo-url>
+git clone [<repo-url>](https://github.com/singuneet/ChattyMind)
 cd ChattyMind-main
 2. Create a Virtual Environment
 python3 -m venv venv
